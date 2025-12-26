@@ -1,11 +1,11 @@
 module Utils
   DIRS = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]].freeze
 
-  def self.build_grid(path)
+  def self.build_grid(path, split_char = '')
     grid = []
     File.open(path, 'r') do |file|
       file.each_line do |line|
-        row = line.chomp.split('')
+        row = line.chomp.split(split_char)
         grid << row
       end
     end
