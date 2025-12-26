@@ -41,4 +41,13 @@ module Utils
 
     neighbors
   end
+
+  def self.find_all_occurrences(grid, target)
+    occurrences = []
+    read_cells(grid) do |cell, r, c|
+      occurrences << [r, c] if cell == target
+    end
+
+    occurrences
+  end
 end
